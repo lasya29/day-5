@@ -1,0 +1,120 @@
+
+def salaryCalculation(grade,salary):
+   if(salary>10000):
+      if(grade=='A'):
+         salary=salary+(salary/5)
+         print(salary)
+      elif(grade=='B'):
+         salary=salary+(salary/10)
+         print(salary)
+         
+   else:
+      if(grade=='A'):
+         salary=salary+(salary/7)
+         print(salary)
+      elif(grade=='B'):
+          salary=salary+(salary/12)
+          print(salary)
+
+grade=input("Enter the Grade of your Employee"+"Like 'A' or 'B' ")
+salary=int(input("Enter your employee salary"))
+salaryCalculation(grade,salary)
+
+Enter the Grade of your EmployeeLike 'A' or 'B' 
+b
+Enter your employee salary
+6000
+
+def length(str):
+   lis=list(str.split(" "))
+   return len(lis[-1])
+str=input("Enter the string to find the last word count")
+print("The length of last word is",length(str))
+
+Enter the string to find the last word count
+lasya
+The length of last word is 5
+num1=int(input("enter the number1:"))
+num2=int(input("enter the number2:"))
+sumdivisor=0
+productdivisor=0
+print("THE COMMON DIVISORS OF NUMBER",num1,"AND",num2,"ARE-")
+for i in range(1,min(num1,num2)+1):
+    if num1%i==num2%i==0:
+        sumdivisor=sumdivisor+i
+if(productdivisor%sumdivisor==0):
+    print("YEAH")
+else:
+    print("NAH")
+enter the number1:
+3
+enter the number2:
+6
+THE COMMON DIVISORS OF NUMBER 3 AND 6 ARE-
+YEAH
+
+def shuffle(n,m):
+    for j in range(8):
+        print(n[j],m[j],n[j+1],m[j+1])
+list1=[]
+list2=[]
+a=int(input("enter the number of elements for list 1:"))
+for i in range(1,a+1):
+    b=int(input("enter the number"))
+    list1.append(b)
+print(list1)
+c=int(input("enter the number of elements for list 2:"))
+for i in range(1,c+1):
+    d=int(input("enter the number"))
+    list1.append(d)
+print(list2)
+print(shuffle(list1,list2))
+
+def shuffle(n,m):
+    for j in range(8):
+        print(n[j],m[j],n[j+1],m[j+1])
+list1=[]
+list2=[]
+a=int(input("enter the number of elements for list 1:"))
+for i in range(1,a+1):
+    b=int(input("enter the number"))
+    list1.append(b)
+print(list1)
+c=int(input("enter the number of elements for list 2:"))
+for i in range(1,c+1):
+    d=int(input("enter the number"))
+    list1.append(d)
+print(list2)
+print(shuffle(list1,list2))
+
+enter the number of elements for list 1:
+2
+enter the number
+4
+enter the number
+6
+[4, 6]
+enter the number of elements for list 2:
+2
+enter the number
+1
+enter the number
+4
+
+def findpeakutil(arr,low,high,n):
+    mid=low+(high-low)/2
+    mid=int(mid)
+    if((mid==0 or arr[mid-1]<=arr[mid])and(mid==n-1 or arr[mid+
+    1]<=arr[mid])):
+        return mid
+    elif(mid>0 and arr[mid-1]>arr[mid]):
+        return findpeakutil(arr,low,(mid-1),n)
+    else:
+        return findpeakutil(arr,(mid+1),high,n)
+def findpeak(arr,n):
+        return findpeakutil(arr,0,n-1,n)
+arr=[1,2,1,3,5,6,4]
+n=len(arr)
+print("index of a peak point is",findpeak(arr,n))
+
+    index of a peak point is 5
